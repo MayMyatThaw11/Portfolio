@@ -1,0 +1,12 @@
+import React from 'react';
+import {motion} from 'motion/react';
+import {Link} from 'react-router-dom';
+import {ExternalLink,Github,Award} from 'lucide-react';
+export function Reveal({children,className='',delay=0}){return <motion.div className={className} initial={{opacity:0,y:22}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.1}} transition={{duration:.6,delay}}>{children}</motion.div>}
+export function SectionHeading({eyebrow,title,description}){return <Reveal className="section-heading"><div><p className="eyebrow">{eyebrow}</p><h2>{title}</h2></div>{description&&<p>{description}</p>}</Reveal>}
+export function ProjectArt({project}){return <div className={`project-art art-${project.art}${project.image?' supplied-cover':''}`}><img loading="lazy" src={project.image?.src||`/project-${project.art}.svg`} alt={project.image?.alt||`Abstract ${project.category.toLowerCase()} illustration; project screenshot not yet provided`}/>{!project.image&&<span className="art-label">CONCEPT VISUAL · SCREENSHOT COMING SOON</span>}</div>}
+export function ProjectCard({project}){return <Reveal className="project-card"><Link to={`/projects/${project.slug}`} className="project-link"><ProjectArt project={project}/><div className="project-info"><span className="eyebrow">{project.category}</span><h3>{project.title}</h3><p>{project.description}</p><div className="project-bottom"><span>{project.stack.length?project.stack.join(' · '):'Technology details to be added'}</span><span className="view-project">Explore project</span></div></div></Link></Reveal>}
+export const validUrl=url=>{try{return ['https:','http:'].includes(new URL(url).protocol)}catch{return false}};
+export function ProjectLinks({project}){return <div className="button-row">{validUrl(project.github)&&<a className="button secondary" href={project.github} target="_blank" rel="noreferrer"><Github size={17}/>Source code</a>}{validUrl(project.demo)&&<a className="button primary" href={project.demo} target="_blank" rel="noreferrer"><ExternalLink size={17}/>Live demo</a>}</div>}
+export function SkillCard({icon:Icon,title,skills,note}){return <Reveal className="skill-card"><Icon size={24} aria-hidden="true"/><div className="skill-card-intro"><h3>{title}</h3>{note&&<p>{note}</p>}</div><div className="skill-tags">{skills.map(s=><span key={s}>{s}</span>)}</div></Reveal>}
+export function CertificateCard({title}){return <Reveal className="certificate"><Award size={24}/><h3>{title}</h3><span>Certification</span></Reveal>}

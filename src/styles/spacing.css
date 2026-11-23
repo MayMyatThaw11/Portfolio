@@ -1,0 +1,49 @@
+/* Explicit spacing survives Tailwind's default margin reset. */
+.project-art.supplied-cover{background:#fff}
+.project-art.supplied-cover img{object-fit:contain;object-position:center}
+.project-art.supplied-cover.art-response{background:#000}
+.project-art.supplied-cover.art-delivery{background:#f2f2f2}
+.project-card:hover .project-art.supplied-cover img{transform:none}
+.project-card .project-link{display:flex;flex-direction:column}
+.project-card .project-art{flex-shrink:0}
+.project-card .project-info{display:flex;flex-direction:column;flex:1;padding:30px}
+.project-info>.eyebrow{display:block;margin:0 0 16px;line-height:1.6}
+.project-info>h3{margin:0 0 20px;line-height:1.25}
+.project-info>p{margin:0 0 26px;min-height:0;line-height:1.8}
+.project-info>.project-bottom{margin-top:auto;padding-top:20px;gap:20px;align-items:flex-start;line-height:1.7}
+.project-bottom>span:first-child{min-width:0;overflow-wrap:anywhere}
+.detail-page>.eyebrow{margin:0 0 20px}
+.detail-page>h1{margin:0 0 24px;line-height:1.15;text-wrap:balance}
+.detail-page>.detail-lead{margin:0;line-height:1.8;max-width:65ch}
+.detail-page>.project-art{margin-block:48px 56px}
+.detail-grid{gap:56px;align-items:start}
+.detail-grid>div>h2{margin:0 0 24px;line-height:1.25}
+.detail-grid>div>p{margin:0;line-height:1.85;max-width:65ch}
+.detail-grid .button-row:not(:empty){margin-top:24px}
+.detail-grid aside{padding-left:32px}
+.detail-grid aside>h3{margin:0 0 28px;line-height:1.3}
+.detail-grid dl{margin:0}
+.detail-grid dt{margin:0 0 10px;font-size:.875rem;line-height:1.5}
+.detail-grid dd{margin:0 0 28px;line-height:1.75}
+.detail-grid dd:last-child{margin-bottom:0}
+.mobile-nav a.active{color:var(--accent);font-weight:650;text-decoration:underline;text-underline-offset:6px}
+@media(max-width:760px){.project-card .project-info{padding:24px}.project-info>.project-bottom{flex-wrap:wrap;gap:12px 20px}.detail-page>h1{margin-bottom:22px}.detail-page>.project-art{margin-block:32px 40px}.detail-grid{gap:32px}.detail-grid aside{padding:28px 0 0}.detail-grid aside>h3{margin-bottom:24px}}
+.skills-grid{gap:24px}
+.skill-card{padding:32px;min-width:0}
+.skill-card>svg{display:block;margin-bottom:28px}
+.skill-card-intro{display:flex;flex-direction:column;gap:14px}
+.skill-card-intro h3{margin:0;font-size:1.35rem;line-height:1.3}
+.skill-card-intro p{margin:0;font-size:.95rem;line-height:1.75}
+.skill-card .skill-tags{margin-top:24px;gap:12px;align-items:flex-start}
+.skill-card .skill-tags span{max-width:100%;padding:9px 13px;line-height:1.55;font-size:.875rem;overflow-wrap:anywhere}
+.experience-entry{padding-top:44px;grid-template-columns:minmax(160px,.75fr) minmax(0,2fr);gap:32px}
+.timeline-date{line-height:1.6}
+.timeline-date span{margin-top:12px;line-height:1.6}
+.timeline-content{padding-left:36px;padding-bottom:4px;min-width:0}
+.timeline-content>.eyebrow{display:block;margin:0 0 18px;line-height:1.6}
+.timeline-content>h3{margin:0 0 20px;line-height:1.3;text-wrap:balance}
+.timeline-content>p{margin:0 0 24px;line-height:1.8;max-width:65ch}
+.timeline-content>ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:14px}
+.timeline-content>ul>li{margin:0;padding-left:4px;line-height:1.8}
+@media(min-width:761px) and (max-width:1100px){.skills-grid{gap:20px}.skill-card{padding:28px 24px}.skill-card-intro h3{font-size:1.25rem}}
+@media(max-width:760px){.skills-grid{gap:20px}.skill-card{padding:28px}.experience-entry{grid-template-columns:1fr;gap:28px;padding-top:32px}.timeline-content{padding-left:24px}.timeline-content>h3{font-size:1.5rem}.timeline-content>ul{gap:16px}}

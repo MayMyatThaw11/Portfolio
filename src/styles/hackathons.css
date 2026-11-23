@@ -1,0 +1,24 @@
+.hackathon-experiences{margin-top:64px}
+.startup-card article{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;align-items:center}
+.startup-card .hackathon-certificate{margin:0}
+.startup-card .text-link{margin-bottom:0;font-size:.875rem}
+@media(max-width:760px){.startup-card article{grid-template-columns:1fr;gap:24px}}
+.hackathon-heading{margin-bottom:28px}
+.hackathon-heading .eyebrow{margin-bottom:12px}
+.hackathon-heading h3{font-size:2rem;margin-bottom:14px}
+.hackathon-heading>p:last-child{margin-bottom:0}
+.hackathon-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;align-items:stretch}
+.hackathon-card{padding:28px;border:1px solid var(--line);border-radius:12px;background:var(--card);min-width:0}
+.hackathon-card.has-certificate{grid-row:span 2;background:var(--secondary)}
+.hackathon-card-heading{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;color:var(--accent);margin-bottom:24px}
+.hackathon-card-heading span{font-size:.875rem}
+.hackathon-card h4{font-size:1.5rem;line-height:1.25;letter-spacing:-.035em;font-weight:600;margin:0 0 14px}
+.hackathon-card p{font-size:1rem}
+.hackathon-card .hackathon-role{font-size:.875rem;color:var(--accent);font-weight:600;margin-bottom:14px}
+.hackathon-certificate{margin:24px 0 0}
+.hackathon-certificate a{display:block;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:var(--bg)}
+.hackathon-certificate img{width:100%;height:auto;object-fit:contain}
+.hackathon-certificate a>span{display:flex;align-items:center;gap:9px;padding:13px 16px;font-size:.875rem;color:var(--accent)}
+.hackathon-certificate a:hover>span{text-decoration:underline;text-underline-offset:4px}
+.hackathon-certificate figcaption{font-size:.875rem;color:var(--muted);margin-top:12px}
+@media(max-width:760px){.hackathon-experiences{margin-top:48px}.hackathon-grid{grid-template-columns:1fr}.hackathon-card.has-certificate{grid-row:auto}.hackathon-card{padding:24px}.hackathon-heading h3{font-size:1.75rem}}

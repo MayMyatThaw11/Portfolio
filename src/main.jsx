@@ -1,0 +1,12 @@
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import {MotionConfig} from 'motion/react';
+import {ThemeProvider} from './contexts/ThemeContext';
+import {Navbar,Footer} from './components/Layout';
+import Home from './pages/Home';
+import {ProjectPage,NotFound} from './pages/ProjectPage';
+import './styles/index.css';
+import './styles/spacing.css';
+import './styles/responsive.css';
+createRoot(document.getElementById('root')).render(<React.StrictMode><BrowserRouter><ThemeProvider><MotionConfig reducedMotion="user"><a className="skip-link" href="#main">Skip to content</a><Navbar/><Routes><Route path="/" element={<Home/>}/><Route path="/projects/:slug" element={<ProjectPage/>}/><Route path="*" element={<NotFound/>}/></Routes><Footer/></MotionConfig></ThemeProvider></BrowserRouter></React.StrictMode>);

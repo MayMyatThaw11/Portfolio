@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {activeSectionAt,sectionActivationLine} from './activeSection.js';
+const positions=tops=>['home','about','projects','skills','experience','contact'].map((id,i)=>({id,top:tops[i]}));
+test('Visible Projects just below the navbar replaces About',()=>assert.equal(activeSectionAt(positions([-1500,-700,116,2400,3200,5000]),sectionActivationLine(88,720,100)),'projects'));
+test('A section farther down the viewport does not activate early',()=>assert.equal(activeSectionAt(positions([-1500,-700,400,2400,3200,5000]),sectionActivationLine(88,720,100)),'about'));
+test('Projects activates at the sticky header',()=>assert.equal(activeSectionAt(positions([-1500,-700,100,2400,3200,5000]),112),'projects'));
+test('Projects remains active deep in the tall project grid',()=>assert.equal(activeSectionAt(positions([-3300,-2500,-1700,600,1400,3200]),112),'projects'));
+test('Scrolling upward selects About again',()=>assert.equal(activeSectionAt(positions([-800,20,700,3000,3800,5600]),112),'about'));
+test('Mobile anchor alignment selects Skills',()=>assert.equal(activeSectionAt(positions([-6000,-5000,-4000,100,1300,4000]),101),'skills'));
+test('Academic sections retain Experience',()=>assert.equal(activeSectionAt(positions([-6000,-5000,-4000,-2500,-1500,400]),112),'experience'));
+test('Page end selects Contact',()=>assert.equal(activeSectionAt(positions([-6000,-5000,-4000,-2500,-1500,250]),112,true),'contact'));
