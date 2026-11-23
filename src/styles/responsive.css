@@ -1,5 +1,5 @@
 /* Shared fluid layout rules, loaded after component and spacing styles. */
-.brand-logo{display:inline-flex;flex-shrink:0;width:98px;height:56px;border-radius:9px;overflow:hidden;background:#f2f2f2}
+.brand-logo{display:inline-flex;flex-shrink:0;width:98px;height:56px;border-radius:9px;overflow:hidden;background:transparent}
 .brand-logo img{display:block;width:100%;height:100%;object-fit:contain}
 @media(max-width:640px){.brand-logo{width:84px;height:48px}}
 :root{--page-gutter:clamp(16px,4vw,50px);--header-height:88px}
